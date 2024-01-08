@@ -28,6 +28,7 @@ jobs:
       run: |
         echo "0 9 * * 1-5 comando_a_ejecutar" >> ~/.cronfile  # Este ejemplo ejecuta 'comando_a_ejecutar' a las 9 AM de lunes a viernes
         crontab ~/.cronfile
+        python hola_mundo.py  # Ejecutar el archivo Python en el mismo directorio
 
       # Establecer el cron para ejecutarse de lunes a viernes a las 9:00 AM UTC
     test_schedule:
