@@ -19,3 +19,7 @@ jobs:
           
       - name: Capturar Zona Horaria
         run: echo "La zona horaria actual es $TZ"
+
+      - name: Mostrar Fecha y Hora en UTC
+        run: |
+          echo "La fecha y hora actual en UTC es: $(date -u)"
