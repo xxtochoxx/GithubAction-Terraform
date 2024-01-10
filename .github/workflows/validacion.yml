@@ -9,14 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Time
+      - name: Capturar Hora y Día
         run: |
           current_hour=$(date +"%H")
           current_day=$(date +"%u")
-
-          if [ $current_day -ge 1 ] && [ $current_day -le 5 ] && [ $current_hour -ge 16 ] && [ $current_hour -lt 18 ]; then
-            echo "Es un horario restringido, no se permite la ejecución del flujo de trabajo."
-            exit 1
-          else
-            echo "Permitido ejecutar el flujo de trabajo en este horario."
-          fi
+          
+          echo "Hora actual: $current_hour"
+          echo "Día actual: $current_day"
