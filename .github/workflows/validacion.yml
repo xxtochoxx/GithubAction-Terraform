@@ -16,3 +16,6 @@ jobs:
           
           echo "Hora actual: $current_hour"
           echo "Día actual: $current_day"
+          
+      - name: Capturar Zona Horaria
+        run: echo "La zona horaria actual es $TZ"
