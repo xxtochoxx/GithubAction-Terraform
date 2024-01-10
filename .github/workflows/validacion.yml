@@ -2,14 +2,14 @@ name: Validación de Horario
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronize,reopened,labeled,unlabeled]
 
 jobs:
   validate_schedule:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check time
+      - name: Time
         run: |
           current_hour=$(date +"%H")
           current_day=$(date +"%u")
