@@ -16,7 +16,7 @@ pipeline {
 
   environment {
       // General Variables for Pipeline
-      PROJECT_ROOT = 'GithubAction-Terraform'
+      PROJECT_ROOT = 'GithubAction-Terraform/app'
       EMAIL_ADDRESS = 'xxtochoxx@gmail.com'
       REGISTRY = 't8version2020/GithubAction-Terraform'// usuario de docker hub
   }
