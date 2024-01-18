@@ -39,7 +39,8 @@ pipeline {
           sh 'npm --version'
           echo 'ProJect ${PROJECT_ROOT}'
           //sh "cd ${PROJECT_ROOT}; 
-          npm install"
+          //sh "cd ${PROJECT_ROOT}; npm install"
+          sh "npm install"
         }
       }
 
