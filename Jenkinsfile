@@ -34,15 +34,15 @@ pipeline {
         // Get Github repo using Github credentials (previously added to Jenkins credentials)
         checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/xxtochoxx/GithubAction-Terraform']]])        }
       }
-   stage('Install dependencies NPM') {
-        steps {
-          sh 'npm --version'
-          echo 'ProJect ${PROJECT_ROOT}'
+//   stage('Install dependencies NPM') {
+//        steps {
+//          sh 'npm --version'
+//          echo 'ProJect ${PROJECT_ROOT}'
           //sh "cd ${PROJECT_ROOT}; 
           //sh "cd ${PROJECT_ROOT}; npm install"
-          sh "npm install"
-        }
-      }
+ //         sh "npm install"
+//        }
+ //     }
 
      // stage('Unit tests NPM') {
        // steps {
