@@ -12,7 +12,6 @@ pipeline {
 
   tools {
       nodejs 'nodejs'
-      php 'php'
   }
 
   environment {
