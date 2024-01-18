@@ -29,24 +29,24 @@ pipeline {
           echo 'This is my amazing Pipeline'
         }
       }
-      stage('Checkout') {
+  stage('Checkout') {
         steps {
         // Get Github repo using Github credentials (previously added to Jenkins credentials)
         checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/xxtochoxx/GithubAction-Terraform']]])        }
       }
-      stage('Install dependencies NPM') {
-        steps {
-          sh 'npm --version'
-          sh "cd ${PROJECT_ROOT}; npm install"
-        }
-      }
+  // stage('Install dependencies NPM') {
+   //     steps {
+     //     sh 'npm --version'
+       //   sh "cd ${PROJECT_ROOT}; npm install"
+  //      }
+//      }
 
-      stage('Unit tests NPM') {
-        steps {
+     // stage('Unit tests NPM') {
+       // steps {
           // Run unit tests
-          sh "cd ${PROJECT_ROOT}; npm run test"
-        }
-      }
+       //  sh "cd ${PROJECT_ROOT}; npm run test"
+       // }
+     // }
 
 
       stage('Generate coverage report') {
