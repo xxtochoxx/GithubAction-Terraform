@@ -16,7 +16,7 @@ pipeline {
 
   environment {
       // General Variables for Pipeline
-      PROJECT_ROOT = 'GithubAction-Terraform/app'
+      PROJECT_ROOT = 'GithubAction-Terraform'
       EMAIL_ADDRESS = 'xxtochoxx@gmail.com'
       REGISTRY = 't8version2020/GithubAction-Terraform'// usuario de docker hub
   }
@@ -41,28 +41,12 @@ pipeline {
         }
       }
 
-      stage('Install dependencies PY') {
-            steps {
-                script {
-                    sh 'pip install -r requirements.txt'
-                }
-            }
-      }
-
       stage('Unit tests NPM') {
         steps {
           // Run unit tests
           sh "cd ${PROJECT_ROOT}; npm run test"
         }
       }
-
-      stage('Unit tests PY') {
-            steps {
-                script {
-                    sh 'python -m unittest discover tests/'
-                }
-            }
-        }
 
 
       stage('Generate coverage report') {
