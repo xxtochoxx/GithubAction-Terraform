@@ -34,12 +34,15 @@ pipeline {
         // Get Github repo using Github credentials (previously added to Jenkins credentials)
         checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/xxtochoxx/GithubAction-Terraform']]])        }
       }
-  // stage('Install dependencies NPM') {
-   //     steps {
-     //     sh 'npm --version'
-       //   sh "cd ${PROJECT_ROOT}; npm install"
-  //      }
-//      }
+//   stage('Install dependencies NPM') {
+//        steps {
+//          sh 'npm --version'
+//          echo 'ProJect ${PROJECT_ROOT}'
+          //sh "cd ${PROJECT_ROOT}; 
+          //sh "cd ${PROJECT_ROOT}; npm install"
+ //         sh "npm install"
+//        }
+ //     }
 
      // stage('Unit tests NPM') {
        // steps {
@@ -49,12 +52,12 @@ pipeline {
      // }
 
 
-      stage('Generate coverage report') {
-        steps {
+      //stage('Generate coverage report') {
+        //steps {
           // Run code-coverage reports
-          sh "cd ${PROJECT_ROOT}; npm run coverage"
-        }
-      }
+          //sh "cd ${PROJECT_ROOT}; npm run coverage"
+        //}
+      //}
       stage('scan') {
           environment {
             // Previously defined in the Jenkins "Global Tool Configuration"
@@ -65,13 +68,13 @@ pipeline {
             withSonarQubeEnv('sonarqube') {
               // Execute the SonarQube scanner with desired flags
               sh "${scannerHome}/bin/sonar-scanner \
-                          -Dsonar.projectKey=SimpleExpressExample:Test \
-                          -Dsonar.projectName=SimpleExpressExample \
+                          -Dsonar.projectKey=GithubActionTerraform:Test \
+                          -Dsonar.projectName=GithubAction-Terraform \
                           -Dsonar.projectVersion=0.0.${BUILD_NUMBER} \
                           -Dsonar.host.url=http://mysonarqube:9000 \
                           -Dsonar.sources=./${PROJECT_ROOT}/app.js,./${PROJECT_ROOT}/config/db.config.js,./${PROJECT_ROOT}/routes/developers.js \
                           -Dsonar.login=admin \
-                          -Dsonar.password=admin \
+                          -Dsonar.password=#Cr1pt0m0n3d4# \
                           -Dsonar.tests=./${PROJECT_ROOT}/test \
                           -Dsonar.javascript.lcov.reportPaths=./${PROJECT_ROOT}/coverage/lcov.info"
             }
