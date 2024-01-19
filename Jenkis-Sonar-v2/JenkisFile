@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+
+    environment {
+        SONARQUBE_HOME = tool 'SonarQube'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            steps {
+                script {
+                    withSonarQubeEnv('SonarQube') {
+                        sh "${SONARQUBE_HOME}/bin/sonar-scanner"
+                    }
+                }
+            }
+        }
+
+        stage('Test Python') {
+            steps {
+                script {
+                    // Configurar y ejecutar pruebas de Python
+                    // Puedes utilizar virtualenv o conda para gestionar el entorno virtual de Python.
+
+                    // Ejemplo:
+                     sh "python3 -m venv venv"
+                     sh "source venv/bin/activate"
+                     sh "pip install -r requirements.txt"
+                     sh "python -m unittest discover -s tests -p '*_test.py'"
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            // Puedes agregar acciones posteriores, como enviar notificaciones o publicar resultados.
+        }
+    }
+}
