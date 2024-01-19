@@ -22,42 +22,20 @@ pipeline {
   }
 
   stages {
-      stage('Hello') {
+      stage('First steps pipeline') {
         steps {
           // First stage is a sample hello-world step to verify correct Jenkins Pipeline
           echo 'Hello World, I am Happy'
           echo 'This is my Pipeline'
         }
       }
-  stage('Checkout') {
+  stage('Checkout branch') {
         steps {
         // Get Github repo using Github credentials (previously added to Jenkins credentials)
         checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/xxtochoxx/GithubAction-Terraform']]])        }
       }
-    
-      //stage('Install dependencies') {
-        //steps {
-          //sh 'npm --version'
-          //sh "cd ${PROJECT_ROOT}; npm install"
-       // }
-      //}
-
-     // stage('Unit tests NPM') {
-       // steps {
-          // Run unit tests
-       //  sh "cd ${PROJECT_ROOT}; npm run test"
-       // }
-     // }
-
-
-      //stage('Generate coverage report') {
-        //steps {
-          // Run code-coverage reports
-          //sh "cd ${PROJECT_ROOT}; npm run coverage"
-        //}
-      //}
-    
-      stage('scan') {
+  
+      stage('sonar-scanner') {
           environment {
             // Previously defined in the Jenkins "Global Tool Configuration"
             def scannerHome = tool 'sonar-scanner';
@@ -67,13 +45,13 @@ pipeline {
             withSonarQubeEnv('sonarqube') {
               // Execute the SonarQube scanner with desired flags
               sh "${scannerHome}/bin/sonar-scanner \
-                          -Dsonar.projectKey=GithubActionTerraform3 \
-                          -Dsonar.projectName=GithubActionTerraform3 \
+                          -Dsonar.projectKey=GithubActionTerraform4 \
+                          -Dsonar.projectName=GithubActionTerraform4 \
                           -Dsonar.host.url=http://mysonarqube:9000 \
                           -Dsonar.login=admin \
                           -Dsonar.password=#Cr1pt0m0n3d4# \
                           -Dsonar.sources=. \
-                          -Dsonar.exclusions=vendor 
+                          -Dsonar.exclusions=vendor "
             }
 
           }
