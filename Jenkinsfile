@@ -18,7 +18,12 @@ pipeline {
       // General Variables for Pipeline
       PROJECT_ROOT = 'GithubAction-Terraform/app'
       EMAIL_ADDRESS = 'xxtochoxx@gmail.com'
-      REGISTRY = 't8version2020/GithubAction-Terraform'// usuario de docker hub
+      REGISTRY = 't8version2020/'// usuario de docker hub
+      DOCKER_REGISTRY_CREDENTIALS = 't8version2020'// usuario de docker hub
+      DOCKER_IMAGE_NAME = 'GithubActionTerraform'
+      DOCKER_IMAGE_TAG = 'latest'
+      DOCKER_PASSWORD='D_ut47r5#/s'
+      
   }
 
   stages {
@@ -58,14 +63,18 @@ pipeline {
       }
       stage('Build docker-image') {
         steps {
-          sh "cd /${PROJECT_ROOT};docker build -t ${REGISTRY}:${BUILD_NUMBER} . "
+          sh "sh "docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} ."
         }
       }
       stage('Deploy docker-image') {
         steps {
-          // If the Dockerhub authentication stopped, do it again
-          sh 'docker login'
-          sh "docker push ${REGISTRY}:${BUILD_NUMBER}"
+              script {
+                    // Autenticarse en el registro de Docker utilizando las credenciales de Jenkins
+                    withCredentials([usernamePassword(credentialsId: DOCKER_REGISTRY_CREDENTIALS, passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                        sh "docker login -u ${REGISTRY} -p ${DOCKER_PASSWORD}"
+                    }
+          
+          sh "docker push ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
         }
       }
   }
