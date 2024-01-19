@@ -67,8 +67,8 @@ pipeline {
             withSonarQubeEnv('sonarqube') {
               // Execute the SonarQube scanner with desired flags
               sh "${scannerHome}/bin/sonar-scanner \
-                          -Dsonar.projectKey=GithubActionTerraform2 \
-                          -Dsonar.projectName=GithubActionTerraform2 \
+                          -Dsonar.projectKey=GithubActionTerraform3 \
+                          -Dsonar.projectName=GithubActionTerraform3 \
                           -Dsonar.host.url=http://localhost:9000 \
                           -Dsonar.sources=. \
                           -Dsonar.exclusions=vendor \
