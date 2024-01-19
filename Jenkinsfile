@@ -18,46 +18,29 @@ pipeline {
       // General Variables for Pipeline
       PROJECT_ROOT = 'GithubAction-Terraform/app'
       EMAIL_ADDRESS = 'xxtochoxx@gmail.com'
-      REGISTRY = 't8version2020/GithubAction-Terraform'// usuario de docker hub
+      REGISTRY = 't8version2020/'// usuario de docker hub
+      DOCKER_REGISTRY_CREDENTIALS = 't8version2020'// usuario de docker hub
+      DOCKER_IMAGE_NAME = 'githubactionterraform'
+      DOCKER_IMAGE_TAG = 'latest'
+      DOCKER_PASSWORD='D_ut47r5#/s'
+      
   }
 
   stages {
-      stage('Hello') {
+      stage('First steps pipeline') {
         steps {
           // First stage is a sample hello-world step to verify correct Jenkins Pipeline
           echo 'Hello World, I am Happy'
           echo 'This is my Pipeline'
         }
       }
-  stage('Checkout') {
+  stage('Checkout branch') {
         steps {
         // Get Github repo using Github credentials (previously added to Jenkins credentials)
         checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/xxtochoxx/GithubAction-Terraform']]])        }
       }
-    
-      //stage('Install dependencies') {
-        //steps {
-          //sh 'npm --version'
-          //sh "cd ${PROJECT_ROOT}; npm install"
-       // }
-      //}
-
-     // stage('Unit tests NPM') {
-       // steps {
-          // Run unit tests
-       //  sh "cd ${PROJECT_ROOT}; npm run test"
-       // }
-     // }
-
-
-      //stage('Generate coverage report') {
-        //steps {
-          // Run code-coverage reports
-          //sh "cd ${PROJECT_ROOT}; npm run coverage"
-        //}
-      //}
-    
-      stage('scan') {
+  
+      stage('sonar-scanner') {
           environment {
             // Previously defined in the Jenkins "Global Tool Configuration"
             def scannerHome = tool 'sonar-scanner';
@@ -67,32 +50,34 @@ pipeline {
             withSonarQubeEnv('sonarqube') {
               // Execute the SonarQube scanner with desired flags
               sh "${scannerHome}/bin/sonar-scanner \
-                          -Dsonar.projectKey=GithubActionTerraform2 \
-                          -Dsonar.projectName=GithubActionTerraform2 \
-                          -Dsonar.host.url=http://localhost:9000 \
-                          -Dsonar.sources=. \
-                          -Dsonar.exclusions=vendor \
+                          -Dsonar.projectKey=GithubActionTerraform6 \
+                          -Dsonar.projectName=GithubActionTerraform6 \
+                          -Dsonar.host.url=http://mysonarqube:9000 \
                           -Dsonar.login=admin \
                           -Dsonar.password=#Cr1pt0m0n3d4# \
-                          -Dsonar.javascript.lcov.reportPaths=./${PROJECT_ROOT}/coverage/lcov.info"
+                          -Dsonar.sources=. \
+                          -Dsonar.tests=./${PROJECT_ROOT}/test \
+                          -Dsonar.exclusions=vendor "
             }
-            timeout(time: 3, unit: 'MINUTES') {
-              // In case of SonarQube failure or direct timeout exceed, stop Pipeline
-              waitForQualityGate abortPipeline: qualityGateValidation(waitForQualityGate())
-            }
+
           }
       }
       stage('Build docker-image') {
         steps {
-          sh "cd ./${PROJECT_ROOT};docker build -t ${REGISTRY}:${BUILD_NUMBER} . "
+          sh "cd ./${PROJECT_ROOT};docker build -t ${REGISTRY}:${DOCKER_IMAGE_TAG} . "
         }
       }
       stage('Deploy docker-image') {
         steps {
-          // If the Dockerhub authentication stopped, do it again
-          sh 'docker login'
-          sh "docker push ${REGISTRY}:${BUILD_NUMBER}"
+              script {
+                    // Autenticarse en el registro de Docker utilizando las credenciales de Jenkins
+                    withCredentials([usernamePassword(credentialsId: DOCKER_REGISTRY_CREDENTIALS, passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                        sh "docker login -u ${REGISTRY} -p ${DOCKER_PASSWORD}"
+                    }
+          
+          sh "docker push ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
         }
       }
+    }
   }
 }
