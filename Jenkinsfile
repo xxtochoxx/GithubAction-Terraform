@@ -63,7 +63,7 @@ pipeline {
       }
       stage('Build docker-image') {
         steps {
-          sh "./${PROJECT_ROOT};docker build -t ${REGISTRY}:${DOCKER_IMAGE_TAG} . "
+          sh "${PROJECT_ROOT};docker build -t ${REGISTRY}:${DOCKER_IMAGE_TAG} . "
         }
       }
       stage('Deploy docker-image') {
