@@ -69,7 +69,7 @@ pipeline {
               sh "${scannerHome}/bin/sonar-scanner \
                           -Dsonar.projectKey=GithubActionTerraform2 \
                           -Dsonar.projectName=GithubActionTerraform2 \
-                          -Dsonar.host.url=http://localhost:9000 \
+                          -Dsonar.host.url=http://mysonarqube:9000 \
                           -Dsonar.sources=. \
                           -Dsonar.exclusions=vendor \
                           -Dsonar.login=admin \
