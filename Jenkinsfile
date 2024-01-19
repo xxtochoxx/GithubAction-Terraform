@@ -70,13 +70,13 @@ pipeline {
               sh "${scannerHome}/bin/sonar-scanner \
                           -Dsonar.projectKey=GithubActionTerraform \
                           // -Dsonar.projectName=GithubAction-Terraform \
-                          -Dsonar.projectVersion=0.0.${BUILD_NUMBER} \
+                          // -Dsonar.projectVersion=0.0.${BUILD_NUMBER} \
                           -Dsonar.host.url=http://mysonarqube:9000 \
-                          // -Dsonar.sources=./${PROJECT_ROOT}/app.js,./${PROJECT_ROOT}/config/db.config.js,./${PROJECT_ROOT}/routes/developers.js \
-                          -Dsonar.sources=. \
+                          -Dsonar.sources=./${PROJECT_ROOT}/app.js,./${PROJECT_ROOT}/config/db.config.js,./${PROJECT_ROOT}/routes/developers.js \
+                          // -Dsonar.sources=. \
                           -Dsonar.login=admin \
                           -Dsonar.password=#Cr1pt0m0n3d4# \
-                          -Dsonar.tests=./${PROJECT_ROOT}/test \
+                          // -Dsonar.tests=./${PROJECT_ROOT}/test \
                           // -Dsonar.javascript.lcov.reportPaths=./${PROJECT_ROOT}/coverage/lcov.info"
             }
             timeout(time: 3, unit: 'MINUTES') {
