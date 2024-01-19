@@ -50,8 +50,8 @@ pipeline {
             withSonarQubeEnv('sonarqube') {
               // Execute the SonarQube scanner with desired flags
               sh "${scannerHome}/bin/sonar-scanner \
-                          -Dsonar.projectKey=GithubActionTerraform4 \
-                          -Dsonar.projectName=GithubActionTerraform4 \
+                          -Dsonar.projectKey=GithubActionTerraform6 \
+                          -Dsonar.projectName=GithubActionTerraform6 \
                           -Dsonar.host.url=http://mysonarqube:9000 \
                           -Dsonar.login=admin \
                           -Dsonar.password=#Cr1pt0m0n3d4# \
@@ -63,7 +63,8 @@ pipeline {
       }
       stage('Build docker-image') {
         steps {
-          sh "docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} ."
+
+          sh "${PROJECT_ROOT};docker build -t ${REGISTRY}:${DOCKER_IMAGE_TAG} . "
         }
       }
       stage('Deploy docker-image') {
