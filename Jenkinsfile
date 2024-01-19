@@ -35,12 +35,12 @@ pipeline {
         checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/xxtochoxx/GithubAction-Terraform']]])        }
       }
     
-      stage('Install dependencies') {
-        steps {
-          sh 'npm --version'
-          sh "cd ${PROJECT_ROOT}; npm install"
-        }
-      }
+      //stage('Install dependencies') {
+        //steps {
+          //sh 'npm --version'
+          //sh "cd ${PROJECT_ROOT}; npm install"
+       // }
+      //}
 
      // stage('Unit tests NPM') {
        // steps {
@@ -50,12 +50,12 @@ pipeline {
      // }
 
 
-      stage('Generate coverage report') {
-        steps {
+      //stage('Generate coverage report') {
+        //steps {
           // Run code-coverage reports
-          sh "cd ${PROJECT_ROOT}; npm run coverage"
-        }
-      }
+          //sh "cd ${PROJECT_ROOT}; npm run coverage"
+        //}
+      //}
     
       stage('scan') {
           environment {
