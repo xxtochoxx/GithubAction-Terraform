@@ -67,12 +67,13 @@ pipeline {
             withSonarQubeEnv('sonarqube') {
               // Execute the SonarQube scanner with desired flags
               sh "${scannerHome}/bin/sonar-scanner \
-                          -Dsonar.projectKey=GithubActionTerraform \
+                          -Dsonar.projectKey=GithubActionTerraform2 \
+                          -Dsonar.projectName=GithubActionTerraform2 \
                           -Dsonar.host.url=http://localhost:9000 \
                           -Dsonar.sources=./${PROJECT_ROOT}/app.js,./${PROJECT_ROOT}/config/db.config.js,./${PROJECT_ROOT}/routes/developers.js \
+                          -Dsonar.exclusions=vendor \
                           -Dsonar.login=admin \
-                          -Dsonar.password=#Cr1pt0m0n3d4# \
-                          -Dsonar.javascript.lcov.reportPaths=./${PROJECT_ROOT}/coverage/lcov.info"
+                          -Dsonar.password=#Cr1pt0m0n3d4# 
             }
             timeout(time: 3, unit: 'MINUTES') {
               // In case of SonarQube failure or direct timeout exceed, stop Pipeline
