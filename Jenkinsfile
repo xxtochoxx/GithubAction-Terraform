@@ -68,8 +68,8 @@ pipeline {
             withSonarQubeEnv('sonarqube') {
               // Execute the SonarQube scanner with desired flags
               sh "${scannerHome}/bin/sonar-scanner \
-                          -Dsonar.projectKey=SimpleExpressExample:Test \
-                          -Dsonar.projectName=SimpleExpressExample \
+                          -Dsonar.projectKey=GithubAction-Terraform/app/test \
+                          -Dsonar.projectName=GithubAction-Terraform \
                           -Dsonar.projectVersion=0.0.${BUILD_NUMBER} \
                           -Dsonar.host.url=http://mysonarqube:9000 \
                           -Dsonar.sources=./${PROJECT_ROOT}/app.js,./${PROJECT_ROOT}/config/db.config.js,./${PROJECT_ROOT}/routes/developers.js \
