@@ -73,8 +73,8 @@ pipeline {
                           -Dsonar.sources=. \
                           -Dsonar.exclusions=vendor \
                           -Dsonar.login=admin \
-                          -Dsonar.tests=./${PROJECT_ROOT}/test \
-                          -Dsonar.javascript.lcov.reportPaths=./${PROJECT_ROOT}/coverage/lcov.info"
+                          -Dsonar.password=#Cr1pt0m0n3d4# \
+                          -Dsonar.tests=./${PROJECT_ROOT}/test
             }
             timeout(time: 3, unit: 'MINUTES') {
               // In case of SonarQube failure or direct timeout exceed, stop Pipeline
