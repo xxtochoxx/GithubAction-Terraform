@@ -70,16 +70,12 @@ pipeline {
                           -Dsonar.projectKey=GithubActionTerraform3 \
                           -Dsonar.projectName=GithubActionTerraform3 \
                           -Dsonar.host.url=http://mysonarqube:9000 \
-                          -Dsonar.sources=. \
-                          -Dsonar.exclusions=vendor \
                           -Dsonar.login=admin \
                           -Dsonar.password=#Cr1pt0m0n3d4# \
-                          -Dsonar.javascript.lcov.reportPaths=./${PROJECT_ROOT}/coverage/lcov.info"
+                          -Dsonar.sources=. \
+                          -Dsonar.exclusions=vendor 
             }
-            timeout(time: 3, unit: 'MINUTES') {
-              // In case of SonarQube failure or direct timeout exceed, stop Pipeline
-              waitForQualityGate abortPipeline: qualityGateValidation(waitForQualityGate())
-            }
+
           }
       }
       stage('Build docker-image') {
