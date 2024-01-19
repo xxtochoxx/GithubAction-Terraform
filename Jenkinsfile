@@ -56,6 +56,7 @@ pipeline {
                           -Dsonar.login=admin \
                           -Dsonar.password=#Cr1pt0m0n3d4# \
                           -Dsonar.sources=. \
+                          -Dsonar.tests=./${PROJECT_ROOT}/test \
                           -Dsonar.exclusions=vendor "
             }
 
@@ -63,8 +64,7 @@ pipeline {
       }
       stage('Build docker-image') {
         steps {
-
-          sh "${PROJECT_ROOT};docker build -t ${REGISTRY}:${DOCKER_IMAGE_TAG} . "
+          sh "cd ./${PROJECT_ROOT};docker build -t ${REGISTRY}:${DOCKER_IMAGE_TAG} . "
         }
       }
       stage('Deploy docker-image') {
