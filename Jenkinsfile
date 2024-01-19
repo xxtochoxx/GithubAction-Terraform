@@ -56,7 +56,6 @@ pipeline {
                           -Dsonar.login=admin \
                           -Dsonar.password=#Cr1pt0m0n3d4# \
                           -Dsonar.sources=. \
-                          -Dsonar.tests=./${PROJECT_ROOT}/test \
                           -Dsonar.exclusions=vendor "
             }
 
