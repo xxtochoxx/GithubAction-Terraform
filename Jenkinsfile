@@ -20,7 +20,7 @@ pipeline {
       EMAIL_ADDRESS = 'xxtochoxx@gmail.com'
       REGISTRY = 't8version2020/'// usuario de docker hub
       DOCKER_REGISTRY_CREDENTIALS = 't8version2020'// usuario de docker hub
-      DOCKER_IMAGE_NAME = 'GithubActionTerraform'
+      DOCKER_IMAGE_NAME = 'githubactionterraform'
       DOCKER_IMAGE_TAG = 'latest'
       DOCKER_PASSWORD='D_ut47r5#/s'
       
