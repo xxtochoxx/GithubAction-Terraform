@@ -26,7 +26,7 @@ pipeline {
         steps {
           // First stage is a sample hello-world step to verify correct Jenkins Pipeline
           echo 'Hello World, I am Happy'
-          echo 'This is my amazing Pipeline'
+          echo 'This is my Pipeline'
         }
       }
   stage('Checkout') {
@@ -61,7 +61,7 @@ pipeline {
       stage('scan') {
           environment {
             // Previously defined in the Jenkins "Global Tool Configuration"
-            scannerHome = tool 'sonar-scanner'
+            def scannerHome = tool 'sonarqube';
           }
           steps {
             // "sonarqube" is the server configured in "Configure System"
@@ -70,7 +70,7 @@ pipeline {
               sh "${scannerHome}/bin/sonar-scanner \
                           -Dsonar.projectKey=GithubActionTerraform \
                           -Dsonar.host.url=http://localhost:9000 \
-                          -Dsonar.sources=. \
+                          -Dsonar.sources=./${PROJECT_ROOT}/app.js,./${PROJECT_ROOT}/config/db.config.js,./${PROJECT_ROOT}/routes/developers.js \
                           -Dsonar.login=admin \
                           -Dsonar.password=#Cr1pt0m0n3d4# \
                           -Dsonar.javascript.lcov.reportPaths=./${PROJECT_ROOT}/coverage/lcov.info"
