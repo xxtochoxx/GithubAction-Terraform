@@ -50,8 +50,8 @@ pipeline {
             withSonarQubeEnv('sonarqube') {
               // Execute the SonarQube scanner with desired flags
               sh "${scannerHome}/bin/sonar-scanner \
-                          -Dsonar.projectKey=GithubActionTerraform6 \
-                          -Dsonar.projectName=GithubActionTerraform6 \
+                          -Dsonar.projectKey=GithubActionTerraform8 \
+                          -Dsonar.projectName=GithubActionTerraform8 \
                           -Dsonar.host.url=http://mysonarqube:9000 \
                           -Dsonar.login=admin \
                           -Dsonar.password=#Cr1pt0m0n3d4# \
@@ -77,9 +77,6 @@ pipeline {
           app.push("${env.BUILD_NUMBER}")            
           app.push("latest")        
               }  
-        
-
       }
     }
   }
-}
