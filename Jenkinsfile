@@ -62,10 +62,11 @@ pipeline {
           }
       }
 
-      stage('Test image') {
+      stage('Boletin') {
         steps {
             script{
-              sh 'echo "Tests passed"'
+              sh 'echo "echo "Notificacion enviada"'
+              sh 'echo "Reporte generado"'
             }
           
         }
@@ -76,8 +77,7 @@ pipeline {
         always {
             // Puedes agregar acciones posteriores, como enviar notificaciones o limpiar recursos temporales
             script{
-              sh 'echo "Notificacion enviada"'
-              sh 'echo "Reporte generado"'
+              sh 'echo "Limpiar recursos temporales"'
             }
           
         }
