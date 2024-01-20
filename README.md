@@ -54,7 +54,7 @@ Instalar plugins de jenkis de acuerdo a su requerimiento.
 ```bash
 los valores por default, dependiendo de la versión, son localhost.
 ```
-[EJEMPLO DE LISTA COMANDO](https://github.com/xxtochoxx/GithubAction-Terraform/blob/main/ejemplo.png)
+(https://github.com/xxtochoxx/GithubAction-Terraform/blob/main/ejemplo.png)
 
 ## Ejecución del reporte
 
@@ -73,5 +73,4 @@ Dsonar.password='#Cr1pt0m0n3d4#'
 En cada stage del jenkis se revisara el estado de cada paso, luego se revisare en sonarqube
 
 ## Diagrama de componentes
-
-[DIAGRAMA DE COMPONENTE](https://github.com/xxtochoxx/GithubAction-Terraform/blob/main/componentes.png)
+(https://github.com/xxtochoxx/GithubAction-Terraform/blob/main/componentes.png)
