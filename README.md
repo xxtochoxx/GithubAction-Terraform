@@ -74,3 +74,8 @@ En cada stage del jenkis se revisara el estado de cada paso, luego se revisare e
 
 ## Diagrama de componentes
 <img src="componentes.png" align="center" />
+
+## Dashboard de jenkins
+<img src="jenkins.png" align="center" />
+## Dashboard de sonar
+<img src="sonar.png" align="center" />
