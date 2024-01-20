@@ -21,7 +21,7 @@ pipeline {
       REGISTRY = 't8version2020'// usuario de docker hub
       DOCKER_REGISTRY_CREDENTIALS = 't8version2020'// usuario de docker hub
       DOCKER_IMAGE_NAME = 'githubactionterraform'
-      DOCKER_IMAGE_TAG = 'latest'
+      DOCKER_IMAGE_TAG = 'Jenkis-Sonar-v2'
       DOCKER_PASSWORD='D_ut47r5#/s'
       
   }
@@ -63,20 +63,31 @@ pipeline {
       }
       stage('Build docker-image') {
         steps {
-          app = docker.build("GithubAction-Terraform/Jenkis-Sonar-v2")
+                script {
+                    // Construir la imagen Docker 
+                    // app = docker.build("GithubAction-Terraform/Jenkis-Sonar-v2") 
+                    sh "docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} ."
+                }
         }
       }
-      stage('Test image') {                       
-          app.inside {   
-             sh 'echo "Tests passed"'        
-            }
+      stage('Test image') {
+             sh 'echo "Tests passed"'
       }
     
       stage('Deploy docker-image - Push image') {
-        docker.withRegistry('https://registry.hub.docker.com', 'git') {                  
-          app.push("${env.BUILD_NUMBER}")            
-          app.push("latest")        
-              }  
+                    steps {
+                script {
+                    // Autenticarse en el registro de Docker utilizando las credenciales de Jenkins
+                    withCredentials([usernamePassword(credentialsId: DOCKER_REGISTRY_CREDENTIALS, passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                        sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
+                    }
+
+                    // Subir la imagen al registro de Docker
+                    sh "docker push ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
+                }
+            }
+        
+
       }
     }
   }
