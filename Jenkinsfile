@@ -16,13 +16,11 @@ pipeline {
 
   environment {
       // General Variables for Pipeline
-      PROJECT_ROOT = 'GithubAction-Terraform/app'
-      EMAIL_ADDRESS = 'xxtochoxx@gmail.com'
-      REGISTRY = 't8version2020'// usuario de docker hub
-      DOCKER_REGISTRY_CREDENTIALS = 't8version2020'// usuario de docker hub
-      DOCKER_IMAGE_NAME = 'githubactionterraform'
-      DOCKER_IMAGE_TAG = 'Jenkis-Sonar-v2'
-      DOCKER_PASSWORD='D_ut47r5#/s'
+      PROJECT_ROOT = 'xxx' // el archivo donde esta el app
+      EMAIL_ADDRESS = 'xxx@gmail.com' // tu correo asociado 
+      REGISTRY = 'xx'// usuario de docker hub
+      DOCKER_IMAGE_NAME = 'xxx' //el nombre de la imagen
+      DOCKER_IMAGE_TAG = 'xxx' / la version de la imagen
       
   }
 
@@ -50,11 +48,11 @@ pipeline {
             withSonarQubeEnv('sonarqube') {
               // Execute the SonarQube scanner with desired flags
               sh "${scannerHome}/bin/sonar-scanner \
-                          -Dsonar.projectKey=GithubActionTerraform8 \
-                          -Dsonar.projectName=GithubActionTerraform8 \
+                          -Dsonar.projectKey=ProyectoTest \
+                          -Dsonar.projectName=ProyectoTest \
                           -Dsonar.host.url=http://mysonarqube:9000 \
                           -Dsonar.login=admin \
-                          -Dsonar.password=#Cr1pt0m0n3d4# \
+                          -Dsonar.password=### \ // la clave de tu app sonar
                           -Dsonar.sources=. \
                           -Dsonar.exclusions=vendor "
             }
