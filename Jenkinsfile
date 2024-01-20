@@ -65,7 +65,7 @@ pipeline {
       stage('Boletin') {
         steps {
             script{
-              sh 'echo "echo "Notificacion enviada"'
+              sh 'echo "Notificacion enviada"'
               sh 'echo "Reporte generado"'
             }
           
