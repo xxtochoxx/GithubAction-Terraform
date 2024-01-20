@@ -72,17 +72,16 @@ pipeline {
         }
              
       }
-    
+  }
     post {
         always {
             // Puedes agregar acciones posteriores, como enviar notificaciones o limpiar recursos temporales
             script{
               sh 'echo "Limpiar recursos temporales"'
             }
-          
         }
     }
         
 
       }
-    }
+    
