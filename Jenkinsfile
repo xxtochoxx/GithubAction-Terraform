@@ -63,7 +63,7 @@ pipeline {
       }
       stage('Build docker-image') {
         steps {
-          sh "cd /app;docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} . "
+          sh "cd GithubAction-Terraform/app;docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} . "
         }
       }
       stage('Deploy docker-image') {
