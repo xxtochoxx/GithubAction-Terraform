@@ -73,4 +73,4 @@ Dsonar.password='#Cr1pt0m0n3d4#'
 En cada stage del jenkis se revisara el estado de cada paso, luego se revisare en sonarqube
 
 ## Diagrama de componentes
-(https://github.com/xxtochoxx/GithubAction-Terraform/blob/main/componentes.png)
+<img src="componentes.png" align="center" />
