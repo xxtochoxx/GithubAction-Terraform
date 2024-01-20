@@ -18,7 +18,7 @@ pipeline {
       // General Variables for Pipeline
       PROJECT_ROOT = 'GithubAction-Terraform/app'
       EMAIL_ADDRESS = 'xxtochoxx@gmail.com'
-      REGISTRY = 't8version2020/'// usuario de docker hub
+      REGISTRY = 't8version2020'// usuario de docker hub
       DOCKER_REGISTRY_CREDENTIALS = 't8version2020'// usuario de docker hub
       DOCKER_IMAGE_NAME = 'githubactionterraform'
       DOCKER_IMAGE_TAG = 'latest'
