@@ -41,7 +41,7 @@ pipeline {
                           -Dsonar.projectName=ProyectoTest \
                           -Dsonar.host.url=http://mysonarqube:9000 \
                           -Dsonar.login=admin \
-                          -Dsonar.password=#Cr1pt0m0n3d4# \ // la clave de tu app sonar
+                          -Dsonar.password=#Cr1pt0m0n3d4# \
                           -Dsonar.sources=. \
                           -Dsonar.exclusions=vendor "
             }
