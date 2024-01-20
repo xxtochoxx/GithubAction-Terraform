@@ -71,11 +71,17 @@ pipeline {
         }
       }
       stage('Test image') {
-             sh 'echo "Tests passed"'
+        steps {
+            script{
+              sh 'echo "Tests passed"'
+            }
+          
+        }
+             
       }
     
       stage('Deploy docker-image - Push image') {
-                    steps {
+            steps {
                 script {
                     // Autenticarse en el registro de Docker utilizando las credenciales de Jenkins
                     withCredentials([usernamePassword(credentialsId: DOCKER_REGISTRY_CREDENTIALS, passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
