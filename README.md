@@ -54,7 +54,7 @@ Instalar plugins de jenkis de acuerdo a su requerimiento.
 ```bash
 los valores por default, dependiendo de la versión, son localhost.
 ```
-(https://github.com/xxtochoxx/GithubAction-Terraform/blob/main/ejemplo.png)
+<img src="ejemplo.png" align="center" />
 
 ## Ejecución del reporte
 
