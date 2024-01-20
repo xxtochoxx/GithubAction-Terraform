@@ -13,17 +13,6 @@ pipeline {
   tools {
       nodejs 'nodejs'
   }
-
-  environment {
-      // General Variables for Pipeline
-      PROJECT_ROOT = 'xxx' // el archivo donde esta el app
-      EMAIL_ADDRESS = 'xxx@gmail.com' // tu correo asociado 
-      REGISTRY = 'xx'// usuario de docker hub
-      DOCKER_IMAGE_NAME = 'xxx' //el nombre de la imagen
-      DOCKER_IMAGE_TAG = 'xxx' / la version de la imagen
-      
-  }
-
   stages {
       stage('First steps pipeline') {
         steps {
@@ -52,7 +41,7 @@ pipeline {
                           -Dsonar.projectName=ProyectoTest \
                           -Dsonar.host.url=http://mysonarqube:9000 \
                           -Dsonar.login=admin \
-                          -Dsonar.password=### \ // la clave de tu app sonar
+                          -Dsonar.password=#Cr1pt0m0n3d4# \ // la clave de tu app sonar
                           -Dsonar.sources=. \
                           -Dsonar.exclusions=vendor "
             }
