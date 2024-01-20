@@ -4,7 +4,7 @@ Humberto Melendez
 
 xxtochoxx@gmail.com
 
-[linkedin](www.linkedin.com/in/humberto-melendez-fernandez)
+[linkedin](www.linkedin.com/humberto-melendez-fernandez)
 
 # Jenkis - Sonarqube & Docker
 
