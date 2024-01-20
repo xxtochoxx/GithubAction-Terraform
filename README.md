@@ -78,5 +78,5 @@ En cada stage del jenkis se revisara el estado de cada paso, luego se revisare e
 ## Dashboard de Jenkins
 <img src="jenkins.png" align="center" />
 
-## Diagrama de Sonar
+## Dashboard de Sonar
 <img src="sonar.png" align="center" />
