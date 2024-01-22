@@ -1,3 +1,7 @@
+
+//Autor - actualización : Humberto Melendez
+//correo - humberto.melendez.arg@gmail.com
+
 // Function to validate that the message returned from SonarQube is ok
 def qualityGateValidation(qg) {
   if (qg.status != 'OK') {
@@ -41,7 +45,7 @@ pipeline {
                           -Dsonar.projectName=ProyectoTest \
                           -Dsonar.host.url=http://mysonarqube:9000 \
                           -Dsonar.login=admin \
-                          -Dsonar.password=#Cr1pt0m0n3d4# \
+                          -Dsonar.password=xtuclavex \
                           -Dsonar.sources=. \
                           -Dsonar.exclusions=vendor "
             }
