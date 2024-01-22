@@ -6,7 +6,7 @@ xxtochoxx@gmail.com
 
 [linkedin](https://www.linkedin.com/in/humberto-melendez-fernandez)
 
-# Jenkis - Sonarqube & Docker
+# Jenkins - Sonarqube & Docker
 
 Estoy aportando a la comunidad una muestra de integración con docker usando Jenkis y Sonarqube , como primera etapa se debe tener en cuenta que debemos tener instalado docker compose.
 
@@ -19,7 +19,7 @@ Los plugins de cada componente deben instalar manualmente (depende del uso),las 
 ```bash
 git clone https://github.com/xxtochoxx/GithubAction-Terraform.git
 cd GithubAction-Terraform
-cd Jenkis-Sonar
+cd Jenkins-Sonar
 ```
 Revisar que el compose pueda ejecutarse,luego listar las imagenes desplegadas
 ```bash
@@ -36,7 +36,7 @@ docker exec -ti -u root *CONTAINER ID* bash
 Ingresar a la ruta GithubAction-Terraform/Jenkis-Sonar/docker-in-jenkis.sh
 
 ```bash
-pbcopy docker-in-jenkis.sh
+pbcopy docker-in-jenkins.sh
 ```
 Revisar que en el contenedor Jenkins se ejecute docker ps
 
