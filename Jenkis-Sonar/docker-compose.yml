@@ -5,13 +5,11 @@ version: "3.8"
 
 services:
   myjenkins:
-    container_name: my_custom_jenkins
+    container_name: my_jenkins_int
     image: jenkins/jenkins:lts
     user: root
     environment:
       MY_NAME: "devops"
-      # Gmail extra configuration for mailer plugin
-      JAVA_OPTS: "-Djava.awt.headless=true -Dmail.smtp.starttls.enable=true"
       SONARQUBE_HOST: mysonarqube
     ports:
       - "8080:8080"
@@ -22,14 +20,14 @@ services:
       # WARNING:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
-      - net_devops
+      - devops
     deploy:
       resources:
         limits:
           cpus: "2"
           memory: 2G
   mysonarqube:
-    container_name: my_custom_sonarqube
+    container_name: my_sonarqube_int
     # build: ./sonarqube_home
     image: sonarqube:9.9.3-community
     environment:
@@ -37,7 +35,7 @@ services:
     ports:
       - "9000:9000"
     networks:
-      - net_devops
+      - devops
     volumes:
       - ./sonarqube_home/conf/:/opt/sonarqube/conf
       - ./sonarqube_home/data/:/opt/sonarqube/data
@@ -47,8 +45,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "2"
-          memory: 3G
+          cpus: "3"
+          memory: 4G
 
 # To use docker-volume (custom_jenkins_home) instead of a directory path-file
 volumes:
@@ -58,4 +56,4 @@ volumes:
 networks:
   net_devops:
     driver: bridge
-    name: net_devops
+    name: devops
