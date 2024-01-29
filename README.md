@@ -33,17 +33,7 @@ La clave por defecto de Sonarqube es admin:admin ⚓
 ```bash
 La clave de Jenkis lo encontramos en lo logs del mismo servidor  🖥️
 ```
-Ingresar al contenedor de Jenkis por medio de su *CONTAINER ID* del comando docker ps
 
-```bash
-docker exec -ti -u root *CONTAINER ID* bash
-```
-<img src="log.png" align="center" />
-Ingresar a la ruta GithubAction-Terraform/Jenkis-Sonar/docker-in-jenkis.sh
-
-```bash
-pbcopy docker-in-jenkins.sh
-```
 Revisar que en el contenedor Jenkins se ejecute docker ps
 
 ## Plugins & dependencias
