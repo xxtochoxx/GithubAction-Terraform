@@ -83,9 +83,9 @@ Dsonar.password='#Cr1pt0m0n3d4#'
 ```bash
 Sonarqube
 ```
-- `Administration`: server base url http://mysonarqube:9000-
+- `Administration`: server base url http://mysonarqube:9003-
 - `Marketplace`: Instalar plugins a usar (nodejs - python - php)-
-- `Administration `: Configuration webhooks // insertar http://myjenkins:8080/sonarqube-webhook-
+- `Administration `: Configuration webhooks // insertar http://myjenkins:8083/sonarqube-webhook-
 
 ```bash
 Jenkins
