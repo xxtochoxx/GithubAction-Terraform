@@ -1,0 +1,45 @@
+2024.01.29 15:17:40 INFO  ce[][o.s.p.ProcessEntryPoint] Starting Compute Engine
+2024.01.29 15:17:40 INFO  ce[][o.s.ce.app.CeServer] Compute Engine starting up...
+2024.01.29 15:17:40 INFO  ce[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://127.0.0.1:9092/sonar;NON_KEYWORDS=VALUE
+2024.01.29 15:17:40 INFO  ce[][c.z.h.HikariDataSource] HikariPool-1 - Starting...
+2024.01.29 15:17:40 INFO  ce[][c.z.h.p.HikariPool] HikariPool-1 - Added connection conn0: url=jdbc:h2:tcp://127.0.0.1:9092/sonar user=
+2024.01.29 15:17:40 INFO  ce[][c.z.h.HikariDataSource] HikariPool-1 - Start completed.
+2024.01.29 15:17:40 WARN  ce[][o.s.db.dialect.H2] H2 database should be used for evaluation purpose only.
+2024.01.29 15:17:41 INFO  ce[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /opt/sonarqube
+2024.01.29 15:17:42 INFO  ce[][o.s.c.c.CePluginRepository] Load plugins
+2024.01.29 15:17:42 INFO  ce[][o.s.c.c.ComputeEngineContainerImpl] Running Community edition
+2024.01.29 15:17:42 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is started
+2024.01.29 15:59:20 INFO  ce[][o.s.p.ProcessEntryPoint] Gracefully stopping process
+2024.01.29 15:59:20 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is stopping...
+2024.01.29 15:59:20 INFO  ce[][o.s.c.t.CeProcessingSchedulerImpl] Gracefully stopping workers...
+2024.01.29 15:59:20 INFO  ce[][c.z.h.HikariDataSource] HikariPool-1 - Shutdown initiated...
+2024.01.29 15:59:21 INFO  ce[][c.z.h.HikariDataSource] HikariPool-1 - Shutdown completed.
+2024.01.29 15:59:21 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is stopped
+2024.01.29 15:59:55 INFO  ce[][o.s.p.ProcessEntryPoint] Starting Compute Engine
+2024.01.29 15:59:55 INFO  ce[][o.s.ce.app.CeServer] Compute Engine starting up...
+2024.01.29 15:59:55 INFO  ce[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://127.0.0.1:9092/sonar;NON_KEYWORDS=VALUE
+2024.01.29 15:59:55 INFO  ce[][c.z.h.HikariDataSource] HikariPool-1 - Starting...
+2024.01.29 15:59:55 INFO  ce[][c.z.h.p.HikariPool] HikariPool-1 - Added connection conn0: url=jdbc:h2:tcp://127.0.0.1:9092/sonar user=
+2024.01.29 15:59:55 INFO  ce[][c.z.h.HikariDataSource] HikariPool-1 - Start completed.
+2024.01.29 15:59:55 WARN  ce[][o.s.db.dialect.H2] H2 database should be used for evaluation purpose only.
+2024.01.29 15:59:57 INFO  ce[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /opt/sonarqube
+2024.01.29 15:59:57 INFO  ce[][o.s.c.c.CePluginRepository] Load plugins
+2024.01.29 15:59:59 INFO  ce[][o.s.c.c.ComputeEngineContainerImpl] Running Community edition
+2024.01.29 15:59:59 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is started
+2024.01.29 16:03:57 INFO  ce[][o.s.p.ProcessEntryPoint] Gracefully stopping process
+2024.01.29 16:03:57 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is stopping...
+2024.01.29 16:03:57 INFO  ce[][o.s.c.t.CeProcessingSchedulerImpl] Gracefully stopping workers...
+2024.01.29 16:03:57 INFO  ce[][c.z.h.HikariDataSource] HikariPool-1 - Shutdown initiated...
+2024.01.29 16:03:57 INFO  ce[][c.z.h.HikariDataSource] HikariPool-1 - Shutdown completed.
+2024.01.29 16:03:57 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is stopped
+2024.01.29 16:04:25 INFO  ce[][o.s.p.ProcessEntryPoint] Starting Compute Engine
+2024.01.29 16:04:25 INFO  ce[][o.s.ce.app.CeServer] Compute Engine starting up...
+2024.01.29 16:04:25 INFO  ce[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://127.0.0.1:9092/sonar;NON_KEYWORDS=VALUE
+2024.01.29 16:04:25 INFO  ce[][c.z.h.HikariDataSource] HikariPool-1 - Starting...
+2024.01.29 16:04:26 INFO  ce[][c.z.h.p.HikariPool] HikariPool-1 - Added connection conn0: url=jdbc:h2:tcp://127.0.0.1:9092/sonar user=
+2024.01.29 16:04:26 INFO  ce[][c.z.h.HikariDataSource] HikariPool-1 - Start completed.
+2024.01.29 16:04:26 WARN  ce[][o.s.db.dialect.H2] H2 database should be used for evaluation purpose only.
+2024.01.29 16:04:26 INFO  ce[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /opt/sonarqube
+2024.01.29 16:04:27 INFO  ce[][o.s.c.c.CePluginRepository] Load plugins
+2024.01.29 16:04:28 INFO  ce[][o.s.c.c.ComputeEngineContainerImpl] Running Community edition
+2024.01.29 16:04:28 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is started
