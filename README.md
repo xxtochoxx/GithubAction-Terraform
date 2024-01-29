@@ -1,9 +1,9 @@
+<img src="jenkins_cholo.png" alt="Humberto Melendez" width="150" height="150" align="center"/>
 # Autor
-
+<img src="jenkins_cholo.png" alt="Humberto Melendez" width="150" height="150" align="center"/>
 > Humberto Melendez
-> xxtochoxx@gmail.com
 
-<img src="jenkins_cholo.png" alt="Humberto Melendez" width="150" height="150" align="right"/>
+> xxtochoxx@gmail.com
 
 [linkedin](https://www.linkedin.com/in/humberto-melendez-fernandez)
 
