@@ -5,11 +5,10 @@ version: "3.8"
 
 services:
   myjenkins:
-    container_name: my_jenkins_int
+    container_name: my_jenkins
     image: jenkins/jenkins:lts
     user: root
     environment:
-      MY_NAME: "devops"
       SONARQUBE_HOST: mysonarqube
     ports:
       - "8080:8080"
@@ -24,8 +23,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "2"
-          memory: 2G
+          cpus: "3"
+          memory: 4G
   mysonarqube:
     container_name: my_sonarqube_int
     # build: ./sonarqube_home
@@ -51,9 +50,9 @@ services:
 # To use docker-volume (custom_jenkins_home) instead of a directory path-file
 volumes:
   jenkins_home:
-    name: "custom_jenkins_home"
+    name: "jenkins_home_v1.0"
 
 networks:
-  net_devops:
+  devops:
     driver: bridge
     name: devops

@@ -43,9 +43,10 @@ pipeline {
               sh "${scannerHome}/bin/sonar-scanner \
                           -Dsonar.projectKey=ProyectoTest \
                           -Dsonar.projectName=ProyectoTest \
+                          -Dsonar.projectVersion=0.0.${BUILD_NUMBER} \
                           -Dsonar.host.url=http://mysonarqube:9000 \
                           -Dsonar.login=admin \
-                          -Dsonar.password=xtuclavex \
+                          -Dsonar.password=123456 \
                           -Dsonar.sources=. \
                           -Dsonar.exclusions=vendor "
             }
