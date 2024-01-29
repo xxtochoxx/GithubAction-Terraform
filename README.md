@@ -35,7 +35,8 @@ cd Jenkins-Sonar
 ```
 Revisar que el compose pueda ejecutarse,luego listar las imagenes desplegadas
 ```bash
-docker-compose up
+docker-compose up -d
+Tener en cuenta que los puertos usados son el 8083:8083 y el 9003:9003
 docker ps
 docker images
 ```
