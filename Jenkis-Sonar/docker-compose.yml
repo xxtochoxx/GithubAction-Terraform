@@ -1,7 +1,7 @@
 #Autor - actualización : Humberto Melendez
 #correo - humberto.melendez.arg@gmail.com
 ---
-version: "3.8"
+version: "4.8"
 
 services:
   myjenkins:
@@ -11,7 +11,7 @@ services:
     environment:
       SONARQUBE_HOST: mysonarqube
     ports:
-      - "8080:8080"
+      - "8083:8083"
     volumes:
       # Named  Docker volume details at the bottom
       - jenkins_home:/var/jenkins_home
@@ -31,7 +31,7 @@ services:
     environment:
       SONAR_ES_BOOTSTRAP_CHECKS_DISABLE: "true"
     ports:
-      - "9000:9000"
+      - "9003:9003"
     networks:
       - devops
     volumes:
