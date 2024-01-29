@@ -1,6 +1,6 @@
 # Autor
 
-Humberto Melendez 
+<img src="jenkis_cholo.png" alt="Humberto Melendez " width="150" height="150" align="right"/>
 
 xxtochoxx@gmail.com
 
@@ -88,7 +88,7 @@ Jenkins
 En cada stage del jenkis se revisara el estado de cada paso, luego se revisare en sonarqube
 
 ## Diagrama de componentes
-<img src="componentes.png" align="center" />
+<img src="componentes2.png" align="center" />
 
 ## Dashboard de Jenkins
 <img src="jenkins.png" align="center" />
