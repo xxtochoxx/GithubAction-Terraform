@@ -1,6 +1,6 @@
 # Autor
 
-<img src="jenkis_cholo.png" alt="Humberto Melendez " width="150" height="150" align="right"/>
+<img src="jenkins_cholo.png" alt="Humberto Melendez " width="150" height="150" align="right"/>
 
 xxtochoxx@gmail.com
 
