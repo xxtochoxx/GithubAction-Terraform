@@ -1,10 +1,10 @@
 # Autor
 
 <img src="jenkins_cholo.png" alt="Humberto Melendez" width="100" height="100" align="left"/>
+🧛
 > Humberto Melendez
-
+<br>
 # Contacto
-
 📫 
 > xxtochoxx@gmail.com
 
