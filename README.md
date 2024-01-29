@@ -2,7 +2,6 @@
 
 <img src="jenkins_cholo.png" alt="Humberto Melendez" width="100" height="100" align="left"/>
 
-🧛
 
 > Humberto Melendez
 
@@ -14,7 +13,7 @@
 
 > xxtochoxx@gmail.com
 
-[linkedin](https://www.linkedin.com/in/humberto-melendez-fernandez)
+> [linkedin](https://www.linkedin.com/in/humberto-melendez-fernandez)
 
 # Jenkins - Sonarqube & Docker (github-action)
 
