@@ -27,6 +27,12 @@ docker-compose up
 docker ps
 docker images
 ```
+```bash
+La clave por defecto de Sonarqube es :accessibility: admin:admin
+```
+```bash
+La clave de Jenkis lo encontramos en lo logs del mismo servidor :accessibility: 🖥️
+```
 Ingresar al contenedor de Jenkis por medio de su *CONTAINER ID* del comando docker ps
 
 ```bash
