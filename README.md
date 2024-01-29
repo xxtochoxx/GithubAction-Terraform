@@ -1,6 +1,6 @@
 # Autor
 
-<img src="jenkins_cholo.png" alt="Humberto Melendez" width="120" height="120" align="left"/>
+<img src="jenkins_cholo.png" alt="Humberto Melendez" width="100" height="100" align="left"/>
 > Humberto Melendez
 
 # Contacto
