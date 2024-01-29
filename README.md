@@ -38,7 +38,7 @@ Ingresar al contenedor de Jenkis por medio de su *CONTAINER ID* del comando dock
 ```bash
 docker exec -ti -u root *CONTAINER ID* bash
 ```
-
+<img src="log.png" align="center" />
 Ingresar a la ruta GithubAction-Terraform/Jenkis-Sonar/docker-in-jenkis.sh
 
 ```bash
