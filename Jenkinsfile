@@ -41,8 +41,8 @@ pipeline {
             withSonarQubeEnv('sonarqube') {
               // Execute the SonarQube scanner with desired flags
               sh "${scannerHome}/bin/sonar-scanner \
-                          -Dsonar.projectKey=ProyectoTest \
-                          -Dsonar.projectName=ProyectoTest \
+                          -Dsonar.projectKey=ProyectoTestv2 \
+                          -Dsonar.projectName=ProyectoTestv2 \
                           -Dsonar.projectVersion=0.0.${BUILD_NUMBER} \
                           -Dsonar.host.url=http://mysonarqube:9000 \
                           -Dsonar.login=admin \
