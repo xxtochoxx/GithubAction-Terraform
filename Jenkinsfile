@@ -50,7 +50,7 @@ pipeline {
                           -Dsonar.password=123456 \
                           -Dsonar.sources=. \
                           -Dsonar.exclusions=vendor \
-                          -Dsonar.analysis.mode=preview \
+                          -Dsonar.analysis.mode=issues \
                           -Dsonar.issuesReport.json.enable=true \
                           -Dsonar.report.export.path=${sonarqubeReportFile}"
             }
