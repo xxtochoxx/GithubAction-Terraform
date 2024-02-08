@@ -14,6 +14,12 @@ def qualityGateValidation(qg) {
 pipeline {
   agent any
 
+  environment {
+        SONARQUBE_HOST = credentials('http://mysonarqube:9000')
+        SONARQUBE_TOKEN = credentials('123456')
+        DEFECTDOJO_API_KEY = credentials('b6060080172b75aa5b4698f225926402ad1cefc3')
+    }
+
   tools {
       nodejs 'nodejs'
   }
@@ -53,6 +59,16 @@ pipeline {
 
           }
       }
+
+      stage('Send SonarQube to DefectDojo') {
+            steps {
+                // Enviar resultados de SonarQube a DefectDojo
+                script {
+                    withCredentials([string(credentialsId: 'defectdojo-api-key', variable: 'DEFECTDOJO_API_KEY')]) {
+                        sh 'defectdojo-send-results --sonarqube-host $SONARQUBE_HOST --sonarqube-token $SONARQUBE_TOKEN --defectdojo-api-key $DEFECTDOJO_API_KEY --sonarqube-report sonarqube-report.json'
+                    }
+                }
+            }
 
       stage('Boletin') {
         steps {
