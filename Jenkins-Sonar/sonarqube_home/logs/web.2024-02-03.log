@@ -1,0 +1,6 @@
+2024.02.03 04:09:43 INFO  web[][o.s.p.ProcessEntryPoint] Gracefully stopping process
+2024.02.03 04:09:43 INFO  web[][o.s.s.n.NotificationDaemon] Notification service stopped
+2024.02.03 04:09:43 INFO  web[][c.z.h.HikariDataSource] HikariPool-1 - Shutdown initiated...
+2024.02.03 04:09:44 INFO  web[][c.z.h.HikariDataSource] HikariPool-1 - Shutdown completed.
+2024.02.03 04:09:44 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database stopped
+2024.02.03 04:09:44 INFO  web[][o.s.s.app.WebServer] Web Server stopped
