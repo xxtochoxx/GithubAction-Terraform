@@ -69,6 +69,7 @@ pipeline {
                     }
                 }
             }
+        }
 
       stage('Boletin') {
         steps {
@@ -91,5 +92,5 @@ pipeline {
     }
         
 
-      }
+}
     
