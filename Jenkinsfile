@@ -14,12 +14,6 @@ def qualityGateValidation(qg) {
 pipeline {
   agent any
 
-  environment {
-        SONARQUBE_HOST = credentials('http://mysonarqube:9000')
-        SONARQUBE_TOKEN = credentials('123456')
-        DEFECTDOJO_API_KEY = credentials('b6060080172b75aa5b4698f225926402ad1cefc3')
-    }
-
   tools {
       nodejs 'nodejs'
   }
@@ -47,8 +41,8 @@ pipeline {
             withSonarQubeEnv('sonarqube') {
               // Execute the SonarQube scanner with desired flags
               sh "${scannerHome}/bin/sonar-scanner \
-                          -Dsonar.projectKey=ProyectoTestv2 \
-                          -Dsonar.projectName=ProyectoTestv2 \
+                          -Dsonar.projectKey=ProyectoTestv.${BUILD_NUMBER} \
+                          -Dsonar.projectName=ProyectoTestv.${BUILD_NUMBER} \
                           -Dsonar.projectVersion=0.0.${BUILD_NUMBER} \
                           -Dsonar.host.url=http://mysonarqube:9000 \
                           -Dsonar.login=admin \
@@ -61,6 +55,12 @@ pipeline {
       }
 
       stage('Send SonarQube to DefectDojo') {
+
+          environment {
+          SONARQUBE_HOST = credentials('http://my-sonarqube.devops:9000/api')
+          SONARQUBE_TOKEN = credentials('squ_c6fe4f8b13f5a5931bdc447da10b885d1f06b271')
+          DEFECTDOJO_API_KEY = credentials('b6060080172b75aa5b4698f225926402ad1cefc3')
+        }
             steps {
                 // Enviar resultados de SonarQube a DefectDojo
                 script {
