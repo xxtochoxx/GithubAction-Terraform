@@ -51,22 +51,25 @@ pipeline {
                           -Dsonar.exclusions=vendor "
             }
 
+              script {
+                    // Ejecuta el análisis de SonarQube y genera el informe en formato JSON
+                    sh 'sonar-scanner -Dsonar.login=admin -Dsonar.password=123456 -Dsonar.analysis.mode=preview -Dsonar.issuesReport.json.enable=true'
+                }
+
           }
       }
 
       stage('Send SonarQube to DefectDojo') {
 
           environment {
-          SONARQUBE_HOST = credentials('http://my-sonarqube.devops:9000/api')
-          SONARQUBE_TOKEN = credentials('squ_c6fe4f8b13f5a5931bdc447da10b885d1f06b271')
           DEFECTDOJO_API_KEY = credentials('b6060080172b75aa5b4698f225926402ad1cefc3')
         }
             steps {
-                // Enviar resultados de SonarQube a DefectDojo
                 script {
+                    // Utiliza las credenciales de DefectDojo para enviar el informe a DefectDojo
                     withCredentials([string(credentialsId: 'defectdojo-api-key', variable: 'DEFECTDOJO_API_KEY')]) {
-                        sh 'defectdojo-send-results --sonarqube-host $SONARQUBE_HOST --sonarqube-token $SONARQUBE_TOKEN --defectdojo-api-key $DEFECTDOJO_API_KEY --sonarqube-report sonarqube-report.json'
-                    }
+                        sh 'defectdojo-send-results --api-key $DEFECTDOJO_API_KEY --report sonarqube-report.json'
+                    }    
                 }
             }
         }
