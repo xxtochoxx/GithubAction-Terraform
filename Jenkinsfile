@@ -35,6 +35,7 @@ pipeline {
           environment {
             // Previously defined in the Jenkins "Global Tool Configuration"
             def scannerHome = tool 'sonar-scanner';
+            def sonarqubeReportFile = "sonarqube-report.json";
           }
           steps {
             // "sonarqube" is the server configured in "Configure System"
@@ -48,13 +49,11 @@ pipeline {
                           -Dsonar.login=admin \
                           -Dsonar.password=123456 \
                           -Dsonar.sources=. \
-                          -Dsonar.exclusions=vendor "
+                          -Dsonar.exclusions=vendor \
+                          -Dsonar.analysis.mode=preview \
+                          -Dsonar.issuesReport.json.enable=true \
+                          -Dsonar.report.export.path=${sonarqubeReportFile}"
             }
-
-              script {
-                    // Ejecuta el análisis de SonarQube y genera el informe en formato JSON
-                    sh 'sonar-scanner -Dsonar.login=admin -Dsonar.password=123456 -Dsonar.analysis.mode=preview -Dsonar.issuesReport.json.enable=true'
-                }
 
           }
       }
