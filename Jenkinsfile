@@ -34,7 +34,7 @@ pipeline {
                           -Dsonar.projectKey=ProyectoTest-.${BUILD_NUMBER} \
                           -Dsonar.projectName=ProyectoTes-.${BUILD_NUMBER} \
                           -Dsonar.projectVersion=0.0.${BUILD_NUMBER} \
-                          -Dsonar.host.url=http://localhost:9003 \
+                          -Dsonar.host.url=http://mysonarqube:9003 \
                           -Dsonar.login=admin \
                           -Dsonar.password=123456 \
                           -Dsonar.sources=. \
