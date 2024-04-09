@@ -22,8 +22,8 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "3"
-          memory: 4G
+          cpus: "4"
+          memory: 8G
   mysonarqube:
     container_name: mysonarqube
     # build: ./sonarqube_home
@@ -43,13 +43,13 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "3"
-          memory: 4G
+          cpus: "4"
+          memory: 8G
 
 # To use docker-volume (custom_jenkins_home) instead of a directory path-file
 volumes:
   jenkins_home:
-    name: "jenkins_home_v1.0"
+    name: "jenkins_home_v8.0"
 
 networks:
   devops:
