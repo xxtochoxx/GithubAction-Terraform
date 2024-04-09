@@ -26,8 +26,7 @@ services:
           memory: 8G
   mysonarqube:
     container_name: mysonarqube
-    image: sonarqube:10.4.1-community
-    user: root
+    image: sonarqube:9.9-community
     environment:
       SONAR_ES_BOOTSTRAP_CHECKS_DISABLE: "true"
     ports:
