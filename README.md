@@ -20,9 +20,9 @@
 
 Estoy aportando a la comunidad una muestra de integración con docker usando Jenkis y Sonarqube , como primera etapa se debe tener en cuenta que debemos tener instalado docker compose.
 
-Los contenemos van a estar en una sola red virtualizada para que puedan integrarse facilmente.
+Los contenedores docker van a estar en una sola red virtualizada para que puedan integrarse facilmente.
 
-Los plugins de cada componente deben instalar manualmente (depende del uso),las dependencias de base de datos son parte de la imagen del contenedor.
+Los plugins de cada componente deben ser instalados manualmente (depende del uso),las dependencias de base de datos son parte de la imagen del contenedor.
 
 Adicionalmente se agrega un ejemnplo puntual sobre el uso de githubactions - saber la fecha y hora de la ejecución de un request.
 
